@@ -1,6 +1,6 @@
 
 name: Integration
-
+# on block means whenever there is a push or pull request to main branch this workflow will be triggered
 on:
   push:
     branches: [ "main" ]
@@ -17,7 +17,7 @@ jobs:
         node-version: [18.x, 20.x, 22.x]
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v4  # This action checks out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
@@ -38,7 +38,7 @@ jobs:
         node-version: [18.x, 20.x, 22.x]
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v4 # This action checks out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
